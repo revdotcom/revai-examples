@@ -1,7 +1,7 @@
 /**
  * Begins a stream with rev.ai using the AudioContext from the browser. Stream will continue until the websocket 
  * connection is closed. Follows the protocol specficied in our documentation:
- * https://www.rev.ai/docs/streaming
+ * https://docs.rev.ai/api/streaming/
  */
 function doStream() {
     statusElement = document.getElementById("status");
@@ -72,7 +72,7 @@ function onClose(event) {
 
 /**
  * Handles messages received from the API according to our protocol
- * https://www.rev.ai/docs/streaming#section/Rev.ai-to-Client-Response
+ * https://docs.rev.ai/api/streaming/responses/
  * @param {MessageEvent} event
  */
 function onMessage(event) {
