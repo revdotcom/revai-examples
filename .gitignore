@@ -1,3 +1,5 @@
 node_examples/node_modules/*
 node_examples/config/config.json
 node_examples/package-lock.json
+
+.idea
