@@ -12,7 +12,7 @@ function doStream() {
 
     const access_token = 'YOUR-ACCESS-TOKEN';
     const content_type = `audio/x-raw;layout=interleaved;rate=${audioContext.sampleRate};format=S16LE;channels=1`;
-    const baseUrl = 'wss://api.rev.ai/speechtotext/v1alpha/stream';
+    const baseUrl = 'wss://api.rev.ai/speechtotext/v1/stream';
     const query = `access_token=${access_token}&content_type=${content_type}`;
     websocket = new WebSocket(`${baseUrl}?${query}`);
 
