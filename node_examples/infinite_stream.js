@@ -2,7 +2,7 @@ const fs = require('fs');
 const revai = require('revai-node-sdk');
 const { Writable } = require('stream');
 
-// CUSTOMER CONSTANTS, SET THIS
+// Set access token here.
 const token = "";
 
 // AUDIO HANDLING CONSTANTS, DO NOT CHANGE UNLESS YOU UNDERSTAND WHAT YOU'RE DOING
