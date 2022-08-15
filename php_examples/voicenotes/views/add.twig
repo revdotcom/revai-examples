@@ -1,0 +1,85 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+  <header class="d-flex justify-content-center py-3">
+    <h1>Add Note</h1>
+  </header>
+
+  <div class="d-flex justify-content-center btn-group-lg mb-5">
+    <button type="button" class="btn btn-success btn-control">Start recording</button>
+  </div>
+  <h4 class="justify-content-center timer" style="text-align:center"></h4>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.6/RecordRTC.js"></script>
+
+  <script>
+  const controlButton = document.querySelector('.btn-control');
+  const timer = document.querySelector('.timer');
+
+  navigator.mediaDevices.getUserMedia({
+    video: false,
+    audio: true
+  }).then(async function(stream) {
+
+    secondsLeft = 15;
+    const recorder = RecordRTC(stream, {
+      type: 'audio',
+      mimeType: 'audio/wav',
+      recorderType: StereoAudioRecorder
+    });
+
+    controlButton.onclick = function() {
+      if (controlButton.textContent === 'Start recording') {
+        startRecording();
+        countdown = setInterval(function () {
+          tick();
+        }, 1000);
+      } else {
+        clearInterval(countdown);
+        stopAndProcessRecording();
+      }
+    }
+
+    tick = function() {
+      if (secondsLeft > 0) {
+        secondsLeft = secondsLeft - 1;
+        timer.innerText = '00:' + secondsLeft.toString().padStart(2,'0');
+      } else {
+        clearInterval(countdown);
+        stopAndProcessRecording();
+      }
+    }
+
+    startRecording = function() {
+      controlButton.textContent = 'Stop recording';
+      controlButton.classList.toggle('btn-danger');
+      recorder.startRecording();
+    }
+
+    stopAndProcessRecording = function() {
+      controlButton.disabled = true;
+      timer.innerText = 'Please wait, uploading...';
+      recorder.stopRecording(function() {
+        const blob = recorder.getBlob();
+        const formData = new FormData();
+        formData.append('file', blob);
+        fetch('', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => {
+          //console.log(response);
+          if (response.ok === false) {
+            window.location.href = '{{ url_for('index', {}, {'status':'error'}) }}';
+          } else {
+            window.location.href = '{{ url_for('index', {}, {'status':'submitted'}) }}';
+          }
+        })
+      });
+    }
+  }).catch(function(error) {
+    console.error(error);
+  });
+
+  </script>
+{% endblock %}

@@ -1,0 +1,10 @@
+{
+    "require": {
+        "slim/slim": "4.*",
+        "slim/twig-view": "^3.3",
+        "php-di/php-di": "^6.4",
+        "slim/psr7": "^1.5",
+        "guzzlehttp/guzzle": "7.*",
+        "mongodb/mongodb": "^1.13"
+    }
+}
