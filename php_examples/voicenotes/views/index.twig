@@ -1,0 +1,63 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+  <header class="d-flex justify-content-center py-3">
+    <h1>My Notes</h1>
+  </header>
+
+  {% if status == 'submitted' %}
+  <div class="alert alert-success text-center" role="alert">Audio sent for transcription.</div>
+  {% endif %}
+
+  {% if status == 'deleted' %}
+  <div class="alert alert-success text-center" role="alert">Note deleted.</div>
+  {% endif %}
+
+  {% if status == 'error' %}
+  <div class="alert alert-danger text-center" role="alert">Audio transcription failed.</div>
+  {% endif %}
+
+  <div class="col-sm-4">
+    <form class="form-inline">
+      <div class="input-group">
+        <input class="form-control" name="term" value="{{ term }}" placeholder="Search">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="submit">Go</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Date</th>
+        <th scope="col">Contents</th>
+        <th scope="col">Status</th>
+        <th scope="col">Rev AI Job ID</th>
+        <th scope="col"><a class="btn btn-primary" href="{{ url_for('index') }}" role="button">Refresh</a></th>
+      </tr>
+    </thead>
+    <tbody>
+  {% for item in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ item.ts|date("d M Y h:i e") }}</td>
+      <td class="text-wrap" style="max-width: 150px;">{{ item.data }}</td>
+    {% if item.status in ['JOB_UPLOADED', 'JOB_TRANSCRIPTION_IN_PROGRESS'] %}
+      <td>In progress</td>
+    {% elseif item.status == 'JOB_RECORDED' %}
+      <td>Recorded</td>
+    {% elseif item.status == 'JOB_TRANSCRIPTION_SUCCESS' %}
+      <td>Transcribed</td>
+    {% elseif item.status == 'JOB_TRANSCRIPTION_FAILURE' %}
+      <td class="text-wrap" style="max-width: 150px;">Failed <br/> {{ item.error }}</td>
+    {% endif %}
+      <td>{{ item.jid }}</td>
+      <td><a class="btn btn-danger" href="{{ url_for('delete', { 'id': item._id }) }}" role="button">Delete</a></td>
+    </tr>
+  {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

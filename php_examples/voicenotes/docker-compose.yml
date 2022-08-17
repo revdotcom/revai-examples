@@ -1,0 +1,38 @@
+version: '3'
+services:
+    app:
+        image: myapp:latest
+        container_name: myapp
+        ports:
+            - 80:80
+        volumes:
+            - ./:/var/www/
+        working_dir: /var/www/
+        depends_on:
+          - db
+        build:
+            context: .
+            dockerfile: Dockerfile
+        environment:
+            - REVAI_ACCESS_TOKEN
+            - MONGODB_URI
+            - CALLBACK_PREFIX
+        command:
+            - /bin/bash
+            - -c
+            - |
+              composer install
+              apache2-foreground
+    db:
+        image: mongo:latest
+        container_name: mydb
+        restart: always
+        environment:
+          MONGO_INITDB_ROOT_USERNAME: myuser
+          MONGO_INITDB_ROOT_PASSWORD: mypassword
+        volumes:
+            - data:/data/db/
+        ports:
+            - 27017:27017
+volumes:
+    data: {}
