@@ -1,4 +1,4 @@
-# Welcome To the Rev.ai Example Repository
+# Welcome To the Rev AI Example Repository
 
 This repository contains examples for using the rev.ai API from either of the provided SDKs (node and python) as well as from PHP and the browser.
 
