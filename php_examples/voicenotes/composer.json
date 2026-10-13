@@ -5,6 +5,6 @@
         "php-di/php-di": "^6.4",
         "slim/psr7": "^1.5",
         "guzzlehttp/guzzle": "7.*",
-        "mongodb/mongodb": "^1.13"
+        "mongodb/mongodb": "^2.5"
     }
 }
