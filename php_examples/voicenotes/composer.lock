@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "508738275a1bce4f4e2550906a593b7d",
+    "content-hash": "7033e823709054f8c0da96215d1bc2c7",
     "packages": [
         {
             "name": "fig/http-message-util",
@@ -386,65 +386,6 @@
             "time": "2022-06-20T21:43:11+00:00"
         },
         {
-            "name": "jean85/pretty-package-versions",
-            "version": "2.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Jean85/pretty-package-versions.git",
-                "reference": "ae547e455a3d8babd07b96966b17d7fd21d9c6af"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Jean85/pretty-package-versions/zipball/ae547e455a3d8babd07b96966b17d7fd21d9c6af",
-                "reference": "ae547e455a3d8babd07b96966b17d7fd21d9c6af",
-                "shasum": ""
-            },
-            "require": {
-                "composer-runtime-api": "^2.0.0",
-                "php": "^7.1|^8.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.17",
-                "jean85/composer-provided-replaced-stub-package": "^1.0",
-                "phpstan/phpstan": "^0.12.66",
-                "phpunit/phpunit": "^7.5|^8.5|^9.4",
-                "vimeo/psalm": "^4.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Jean85\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alessandro Lai",
-                    "email": "alessandro.lai85@gmail.com"
-                }
-            ],
-            "description": "A library to get pretty versions strings of installed dependencies",
-            "keywords": [
-                "composer",
-                "package",
-                "release",
-                "versions"
-            ],
-            "support": {
-                "issues": "https://github.com/Jean85/pretty-package-versions/issues",
-                "source": "https://github.com/Jean85/pretty-package-versions/tree/2.0.5"
-            },
-            "time": "2021-10-08T21:21:46+00:00"
-        },
-        {
             "name": "laravel/serializable-closure",
             "version": "v1.2.0",
             "source": {
@@ -505,35 +446,40 @@
         },
         {
             "name": "mongodb/mongodb",
-            "version": "1.13.0",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mongodb/mongo-php-library.git",
-                "reference": "a9d82890fe0c104cf795e6c759c92484d12c027a"
+                "url": "https://github.com/mongodb/mongo-php-library",
+                "reference": "d70875dbb897a1cc7de15b6d21ceed43706f1937"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mongodb/mongo-php-library/zipball/a9d82890fe0c104cf795e6c759c92484d12c027a",
-                "reference": "a9d82890fe0c104cf795e6c759c92484d12c027a",
+                "url": "https://api.github.com/repos/mongodb/mongo-php-library/zipball/d70875dbb897a1cc7de15b6d21ceed43706f1937",
+                "reference": "d70875dbb897a1cc7de15b6d21ceed43706f1937",
                 "shasum": ""
             },
             "require": {
-                "ext-hash": "*",
-                "ext-json": "*",
-                "ext-mongodb": "^1.14.0",
-                "jean85/pretty-package-versions": "^1.2 || ^2.0.1",
-                "php": "^7.2 || ^8.0",
-                "symfony/polyfill-php80": "^1.19"
+                "composer-runtime-api": "^2.0",
+                "ext-mongodb": "^2.5",
+                "php": "^8.1",
+                "psr/log": "^1.1.4|^2|^3",
+                "symfony/polyfill-php84": "^1.38",
+                "symfony/polyfill-php85": "^1.33"
+            },
+            "replace": {
+                "mongodb/builder": "*"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^9.0",
-                "squizlabs/php_codesniffer": "^3.6",
-                "symfony/phpunit-bridge": "^5.2"
+                "doctrine/coding-standard": "^12.0",
+                "phpunit/phpunit": "^10.5.35",
+                "rector/rector": "~2.6.4",
+                "squizlabs/php_codesniffer": "^3.7",
+                "vimeo/psalm": "~6.14.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.13.x-dev"
+                    "dev-master": "1.x-dev"
                 }
             },
             "autoload": {
@@ -556,6 +502,10 @@
                 {
                     "name": "Jeremy Mikola",
                     "email": "jmikola@gmail.com"
+                },
+                {
+                    "name": "Jérôme Tamarelle",
+                    "email": "jerome.tamarelle@mongodb.com"
                 }
             ],
             "description": "MongoDB driver library",
@@ -566,11 +516,7 @@
                 "mongodb",
                 "persistence"
             ],
-            "support": {
-                "issues": "https://github.com/mongodb/mongo-php-library/issues",
-                "source": "https://github.com/mongodb/mongo-php-library/tree/1.13.0"
-            },
-            "time": "2022-07-14T05:07:37+00:00"
+            "time": "2026-09-29T12:27:47+00:00"
         },
         {
             "name": "nikic/fast-route",
@@ -1119,16 +1065,16 @@
         },
         {
             "name": "psr/log",
-            "version": "3.0.0",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "fe5ea303b0887d5caefd3d431c3e61ad47037001"
+                "reference": "f16e1d5863e37f8d8c2a01719f5b34baa2b714d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/fe5ea303b0887d5caefd3d431c3e61ad47037001",
-                "reference": "fe5ea303b0887d5caefd3d431c3e61ad47037001",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/f16e1d5863e37f8d8c2a01719f5b34baa2b714d3",
+                "reference": "f16e1d5863e37f8d8c2a01719f5b34baa2b714d3",
                 "shasum": ""
             },
             "require": {
@@ -1163,9 +1109,9 @@
                 "psr-3"
             ],
             "support": {
-                "source": "https://github.com/php-fig/log/tree/3.0.0"
+                "source": "https://github.com/php-fig/log/tree/3.0.2"
             },
-            "time": "2021-07-14T16:46:02+00:00"
+            "time": "2024-09-11T13:17:53+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -1868,6 +1814,166 @@
             "time": "2022-05-24T11:49:31+00:00"
         },
         {
+            "name": "symfony/polyfill-php84",
+            "version": "v1.43.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php84.git",
+                "reference": "22c6548499cbe5c5bb072fc0c42312dff062a015"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php84/zipball/22c6548499cbe5c5bb072fc0c42312dff062a015",
+                "reference": "22c6548499cbe5c5bb072fc0c42312dff062a015",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "type": "library",
+            "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php84\\": ""
+                },
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 8.4+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php84/tree/v1.43.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2026-09-23T22:01:09+00:00"
+        },
+        {
+            "name": "symfony/polyfill-php85",
+            "version": "v1.43.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php85.git",
+                "reference": "86a42cbcc07adc331481a5ab310a4024bfc227f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php85/zipball/86a42cbcc07adc331481a5ab310a4024bfc227f6",
+                "reference": "86a42cbcc07adc331481a5ab310a4024bfc227f6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "type": "library",
+            "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php85\\": ""
+                },
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 8.5+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php85/tree/v1.43.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2026-09-25T15:46:47+00:00"
+        },
+        {
             "name": "twig/twig",
             "version": "v3.4.1",
             "source": {
@@ -1947,10 +2053,10 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
 }
